@@ -1,0 +1,168 @@
+@bg-page: hsl(196, 7%, 33%);
+@bg-search: hsl(239, 57%, 29%);
+@primary: #007bff;
+@primary-hover: #0056b3;
+@uppercase: uppercase;
+
+body {
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: @bg-page;
+}
+
+.table-container {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table thead th {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  background: #f4f4f4; 
+  font-weight: bold;
+  text-transform: @uppercase;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  text-align: center;
+  background: #fff; 
+}
+
+.search-box-container {
+  background-color: @bg-search;
+  padding: 15px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.search-box {
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 60%;
+  max-width: 400px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  text-transform: @uppercase;
+}
+
+.search-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: @primary;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-button:hover {
+background-color: @primary-hover;
+}
+
+@media (max-width: 768px) {
+  .data-table {
+    font-size: 10px;
+  }
+
+  .data-table thead th {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .data-table td {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .search-box {
+    width: 80%;   
+    font-size: 12px;
+  }
+
+  .search-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    margin: 0;
+    padding: 1px 1px;
+    overflow-x: hidden;
+  }
+
+  .table-container {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .data-table {
+    width: 100%;
+    border-spacing: 0;
+    font-size: 5px;
+    border-bottom-left-radius: 0px;  
+    border-bottom-right-radius: 0px;
+  }
+
+  .data-table thead th {
+    font-size: 5px;
+    padding: 1px;
+  }
+
+  .data-table td {
+    padding: 5px;
+    font-size: 5px;
+  }
+
+  .search-box-container {
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    flex-direction: column; 
+    align-items: stretch;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  .search-box {
+    font-size: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .search-button {
+    font-size: 12px;
+    padding: 6px;
+    width: 100%;
+  }
+}
